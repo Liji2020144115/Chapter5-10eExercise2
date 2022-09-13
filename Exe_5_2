@@ -1,0 +1,29 @@
+count = 0#计数器
+sum = 0#求和
+average = 0 #求平均数
+max = 0 #求最大数
+min = 0#求最小数
+list=[]#空列表
+#循环要求：从键盘输入数据，只有数字有效，输入其他的提示无需数据，当输入done时结束
+
+while 1:
+    numbers=input("Please input a number:")
+    if(numbers == 'done') :
+        break
+    else:
+        try :
+            numbers = float(numbers)
+            list.append(numbers)
+        except :
+            print("Invalid Input!")
+
+#遍历列表
+for i in list :
+    sum=sum+i
+    count=count+1
+
+list.sort()#对列表进行排序，默认是升序
+min=list[0]
+max=list[count-1]
+average=sum/count
+print(sum,count,max,min)
